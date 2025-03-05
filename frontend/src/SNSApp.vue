@@ -55,7 +55,7 @@
                     <v-list-item
                         class="px-2"
                         key="deviceMgmts"
-                        to="/deviceMgmts/deviceMgmts"
+                        to="/devicemgmts/deviceMgmts"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
@@ -65,7 +65,7 @@
                     <v-list-item
                         class="px-2"
                         key="단말기조회"
-                        to="/deviceMgmts/단말기조회"
+                        to="/devicemgmts/단말기조회"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
@@ -145,14 +145,14 @@ export default {
                 title: '단말기관리', 
                 description: 'deviceMgmt을 관리하는 화면입니다.', 
                 key: 'deviceMgmts', 
-                route: '/deviceMgmts/deviceMgmts',
+                route: '/devicemgmts/deviceMgmts',
                 ImageUrl: '',
             },
             { 
                 title: '단말기조회', 
                 description: '단말기 조회을 관리하는 화면입니다.', 
                 key: '단말기조회', 
-                route: '/deviceMgmts/단말기조회',
+                route: '/devicemgmts/단말기조회',
                 ImageUrl: '',
             },
             

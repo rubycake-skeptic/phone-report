@@ -84,7 +84,7 @@
 
 
     export default {
-        name: 'DeviceMgmtDeviceMgmt',
+        name: 'DevicemgmtDeviceMgmt',
         components:{
         },
         props: {

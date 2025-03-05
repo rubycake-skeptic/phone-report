@@ -22,7 +22,7 @@ See the README.md files inside the each microservices directory:
 
 - report
 - notificationmanagement
-- device mgmt
+- devicemgmt
 - analytics
 
 
@@ -41,7 +41,7 @@ mvn spring-boot:run
 ```
  http :8088/notificationHistories historyId="historyId"message="message"userId="userId"notifiedAt="notifiedAt"
 ```
-- device mgmt
+- devicemgmt
 ```
  http :8088/deviceMgmts deviceId="deviceId"imei="imei"userId="userId"updatedAt="updatedAt"createdAt="createdAt"
 ```

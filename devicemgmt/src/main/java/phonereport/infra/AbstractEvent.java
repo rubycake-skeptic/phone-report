@@ -9,7 +9,7 @@ import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.transaction.support.TransactionSynchronizationAdapter;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 import org.springframework.util.MimeTypeUtils;
-import phonereport.DeviceMgmtApplication;
+import phonereport.DevicemgmtApplication;
 import phonereport.config.kafka.KafkaProcessor;
 
 //<<< Clean Arch / Outbound Adaptor
@@ -32,7 +32,7 @@ public class AbstractEvent {
         /**
          * spring streams 방식
          */
-        KafkaProcessor processor = DeviceMgmtApplication.applicationContext.getBean(
+        KafkaProcessor processor = DevicemgmtApplication.applicationContext.getBean(
             KafkaProcessor.class
         );
         MessageChannel outputChannel = processor.outboundTopic();

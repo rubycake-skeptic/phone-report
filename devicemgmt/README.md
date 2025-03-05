@@ -1,4 +1,4 @@
-# device mgmt
+# devicemgmt
 
 ## Running in local development environment
 
@@ -10,8 +10,8 @@ mvn spring-boot:run
 
 ```
 mvn package -B -DskipTests
-docker build -t username/device mgmt:v1 .
-docker run username/device mgmt:v1
+docker build -t username/devicemgmt:v1 .
+docker run username/devicemgmt:v1
 ```
 
 ## Push images and running in Kubernetes
@@ -20,15 +20,15 @@ docker run username/device mgmt:v1
 docker login 
 # in case of docker hub, enter your username and password
 
-docker push username/device mgmt:v1
+docker push username/devicemgmt:v1
 ```
 
 Edit the deployment.yaml under the /kubernetes directory:
 ```
     spec:
       containers:
-        - name: device mgmt
-          image: username/device mgmt:latest   # change this image name
+        - name: devicemgmt
+          image: username/devicemgmt:latest   # change this image name
           ports:
             - containerPort: 8080
 
@@ -41,13 +41,13 @@ kubectl apply -f kubernetes/deployment.yaml
 
 See the pod status:
 ```
-kubectl get pods -l app=device mgmt
+kubectl get pods -l app=devicemgmt
 ```
 
 If you have no problem, you can connect to the service by opening a proxy between your local and the kubernetes by using this command:
 ```
 # new terminal
-kubectl port-forward deploy/device mgmt 8080:8080
+kubectl port-forward deploy/devicemgmt 8080:8080
 
 # another terminal
 http localhost:8080
@@ -55,7 +55,7 @@ http localhost:8080
 
 If you have any problem on running the pod, you can find the reason by hitting this:
 ```
-kubectl logs -l app=device mgmt
+kubectl logs -l app=devicemgmt
 ```
 
 Following problems may be occurred:

@@ -25,7 +25,7 @@
                         </v-fab-transition>
                     </template>
 
-                    <DeviceMgmtDeviceMgmt :offline="offline"  :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
+                    <DevicemgmtDeviceMgmt :offline="offline"  :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
                 
                     <v-btn
                         class="gs-close-btn"
@@ -44,12 +44,12 @@
 
 <script>
     const axios = require('axios').default;
-    import DeviceMgmtDeviceMgmt from './../DeviceMgmtDeviceMgmt.vue';
+    import DevicemgmtDeviceMgmt from './../DevicemgmtDeviceMgmt.vue';
 
     export default {
-        name: 'DeviceMgmtDeviceMgmtManager',
+        name: 'DevicemgmtDeviceMgmtManager',
         components: {
-            DeviceMgmtDeviceMgmt,
+            DevicemgmtDeviceMgmt,
         },
         props: {
             offline: Boolean,

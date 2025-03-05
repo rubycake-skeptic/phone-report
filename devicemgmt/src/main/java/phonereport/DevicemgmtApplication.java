@@ -10,12 +10,12 @@ import phonereport.config.kafka.KafkaProcessor;
 @SpringBootApplication
 @EnableBinding(KafkaProcessor.class)
 @EnableFeignClients
-public class DeviceMgmtApplication {
+public class DevicemgmtApplication {
 
     public static ApplicationContext applicationContext;
 
     public static void main(String[] args) {
         applicationContext =
-            SpringApplication.run(DeviceMgmtApplication.class, args);
+            SpringApplication.run(DevicemgmtApplication.class, args);
     }
 }

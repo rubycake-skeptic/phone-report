@@ -16,7 +16,7 @@
         <v-col style="margin-bottom:40px;">
             <div class="text-center">
                 <v-dialog v-model="openDialog" width="500">
-                    <DeviceMgmtDeviceMgmt :offline="offline"  :isNew="true" :editMode="true" v-model="newValue" 
+                    <DevicemgmtDeviceMgmt :offline="offline"  :isNew="true" :editMode="true" v-model="newValue" 
                             @add="append" v-if="tick"/>
                     <v-btn
                         class="gs-close-btn"
@@ -63,7 +63,7 @@
         </v-col>
         <v-row class="ma-0 pa-0">
             <v-col class="pa-4" cols="12" sm="6" md="3" v-for="(value, index) in values" :key="index">
-                <DeviceMgmtDeviceMgmt :offline="offline"
+                <DevicemgmtDeviceMgmt :offline="offline"
                     v-model="values[index]"
                     @delete="remove"/>
             </v-col>
@@ -74,12 +74,12 @@
 <script>
 
     const axios = require('axios').default;
-    import DeviceMgmtDeviceMgmt from './../DeviceMgmtDeviceMgmt.vue';
+    import DevicemgmtDeviceMgmt from './../DevicemgmtDeviceMgmt.vue';
 
     export default {
-        name: 'DeviceMgmtDeviceMgmtManager',
+        name: 'DevicemgmtDeviceMgmtManager',
         components: {
-            DeviceMgmtDeviceMgmt,
+            DevicemgmtDeviceMgmt,
         },
         props: {
             offline: Boolean

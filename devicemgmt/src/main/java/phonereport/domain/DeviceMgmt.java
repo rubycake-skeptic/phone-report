@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import javax.persistence.*;
 import lombok.Data;
-import phonereport.DeviceMgmtApplication;
+import phonereport.DevicemgmtApplication;
 import phonereport.domain.DeviceActivated;
 import phonereport.domain.DeviceAdded;
 import phonereport.domain.DeviceDeactivated;
@@ -33,7 +33,7 @@ public class DeviceMgmt {
     private Date createdAt;
 
     public static DeviceMgmtRepository repository() {
-        DeviceMgmtRepository deviceMgmtRepository = DeviceMgmtApplication.applicationContext.getBean(
+        DeviceMgmtRepository deviceMgmtRepository = DevicemgmtApplication.applicationContext.getBean(
             DeviceMgmtRepository.class
         );
         return deviceMgmtRepository;

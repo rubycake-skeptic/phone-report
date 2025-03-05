@@ -67,7 +67,7 @@
     const axios = require('axios').default;
 
     export default {
-        name: 'DeviceMgmtDeviceMgmtDetail',
+        name: 'DevicemgmtDeviceMgmtDetail',
         components:{},
         props: {
         },

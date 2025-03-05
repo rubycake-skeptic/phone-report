@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: device mgmt
+    name: devicemgmt
 ---
 
 spring:
@@ -29,7 +29,7 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: device mgmt
+          group: devicemgmt
 #<<< EDA / Topic Name
           destination: phonereport
 #>>> EDA / Topic Name
@@ -74,7 +74,7 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: device mgmt
+          group: devicemgmt
           destination: phonereport
           contentType: application/json
         event-out:
