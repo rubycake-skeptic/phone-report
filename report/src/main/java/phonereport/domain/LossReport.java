@@ -42,7 +42,7 @@ public class LossReport {
     }
 
     //<<< Clean Arch / Port Method
-    public void reportPhone() {
+    public void reportPhone(ReportPhoneCommand reportPhoneCommand) {
         //implement business logic here:
 
         PhoneReported phoneReported = new PhoneReported(this);
