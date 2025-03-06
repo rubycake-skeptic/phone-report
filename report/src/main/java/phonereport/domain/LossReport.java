@@ -66,6 +66,57 @@ public class LossReport {
         StatusChecked statusChecked = new StatusChecked(this);
         statusChecked.publishAfterCommit();
     }
+
+    //>>> Clean Arch / Port Method
+
+    //<<< Clean Arch / Port Method
+    public static void changeReportStatus(DeviceActivated deviceActivated) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        LossReport lossReport = new LossReport();
+        repository().save(lossReport);
+
+        */
+
+        /** Example 2:  finding and process
+        
+
+        repository().findById(deviceActivated.get???()).ifPresent(lossReport->{
+            
+            lossReport // do something
+            repository().save(lossReport);
+
+
+         });
+        */
+
+    }
+
+    //>>> Clean Arch / Port Method
+    //<<< Clean Arch / Port Method
+    public static void changeReportStatus(DeviceDeactivated deviceDeactivated) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        LossReport lossReport = new LossReport();
+        repository().save(lossReport);
+
+        */
+
+        /** Example 2:  finding and process
+        
+
+        repository().findById(deviceDeactivated.get???()).ifPresent(lossReport->{
+            
+            lossReport // do something
+            repository().save(lossReport);
+
+
+         });
+        */
+
+    }
     //>>> Clean Arch / Port Method
 
 }

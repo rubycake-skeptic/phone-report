@@ -17,10 +17,10 @@ spring:
           uri: http://localhost:8083
           predicates:
             - Path=/notificationHistories/**, 
-        - id: device mgmt
+        - id: devicemgmt
           uri: http://localhost:8084
           predicates:
-            - Path=/deviceMgmts/**, /단말기조회/**
+            - Path=/deviceMgmts/**, /readDevices/**
         - id: analytics
           uri: http://localhost:8085
           predicates:
@@ -57,8 +57,8 @@ spring:
           uri: http://notificationmanagement:8080
           predicates:
             - Path=/notificationHistories/**, 
-        - id: device mgmt
-          uri: http://deviceMgmt:8080
+        - id: devicemgmt
+          uri: http://devicemgmt:8080
           predicates:
             - Path=/deviceMgmts/**, 
         - id: analytics

@@ -9,18 +9,19 @@
         </template>
 
         <v-card-title v-if="value._links">
-            분실 신고 # {{decode(value._links.self.href.split("/")[value._links.self.href.split("/").length - 1])}}
+            단말기관리 # {{decode(value._links.self.href.split("/")[value._links.self.href.split("/").length - 1])}}
         </v-card-title >
         <v-card-title v-else>
-            분실 신고
+            단말기관리
         </v-card-title >        
 
         <v-card-text style="background-color: white;">
-            <Number v-if="editMode" label="신고ID" v-model="value.reportId" :editMode="editMode" :inputUI="''"/>
-            <String label="단말기식별번호" v-model="value.imei" :editMode="editMode" :inputUI="''"/>
+            <Number v-if="editMode" label="단말기ID" v-model="value.deviceId" :editMode="editMode" :inputUI="''"/>
+            <String label="단말기식별코드" v-model="value.imei" :editMode="editMode" :inputUI="''"/>
             <Number label="사용자ID" v-model="value.userId" :editMode="editMode" :inputUI="''"/>
-            <String label="상태" v-model="value.status" :editMode="editMode" :inputUI="''"/>
-            <Number label="검토자ID" v-model="value.reviewerId" :editMode="editMode" :inputUI="''"/>
+            <status offline label="단말기 상태" v-model="value.status" :editMode="editMode" @change="change"/>
+            <Date label="갱신일시" v-model="value.updatedAt" :editMode="editMode" :inputUI="''"/>
+            <Date label="생성일시" v-model="value.createdAt" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions style="background-color: white;">
@@ -47,7 +48,7 @@
                     text
                     @click="save"
                 >
-                    분실해제
+                    단말기추가
                 </v-btn>
                 <v-btn
                     color="primary"
@@ -61,30 +62,6 @@
         </v-card-actions>
         <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn
-                v-if="!editMode"
-                color="primary"
-                text
-                @click="reportPhone"
-            >
-                ReportPhone
-            </v-btn>
-            <v-btn
-                v-if="!editMode"
-                color="primary"
-                text
-                @click="inspectReport"
-            >
-                InspectReport
-            </v-btn>
-            <v-btn
-                v-if="!editMode"
-                color="primary"
-                text
-                @click="checkStatus"
-            >
-                CheckStatus
-            </v-btn>
         </v-card-actions>
 
         <v-snackbar
@@ -107,7 +84,7 @@
 
 
     export default {
-        name: 'ReportLossReport',
+        name: 'DevicemgmtDeviceMgmt',
         components:{
         },
         props: {
@@ -162,7 +139,7 @@
 
                     if(!this.offline) {
                         if(this.isNew) {
-                            temp = await axios.post(axios.fixUrl('/lossReports'), this.value)
+                            temp = await axios.post(axios.fixUrl('/deviceMgmts'), this.value)
                         } else {
                             temp = await axios.put(axios.fixUrl(this.value._links.self.href), this.value)
                         }
@@ -218,67 +195,6 @@
             },
             change(){
                 this.$emit('input', this.value);
-            },
-            async reportPhone() {
-                try {
-                    if(!this.offline){
-                        var temp = await axios.post(axios.fixUrl(this.value._links['/reportphone'].href))
-                        for(var k in temp.data) this.value[k]=temp.data[k];
-                    }
-
-                    this.editMode = false;
-                    
-                    this.$emit('input', this.value);
-                    this.$emit('delete', this.value);
-                
-                } catch(e) {
-                    this.snackbar.status = true
-                    if(e.response && e.response.data.message) {
-                        this.snackbar.text = e.response.data.message
-                    } else {
-                        this.snackbar.text = e
-                    }
-                }
-            },
-            async inspectReport() {
-                try {
-                    if(!this.offline) {
-                        var temp = await axios.put(axios.fixUrl(this.value._links['inspectreport'].href))
-                        for(var k in temp.data) {
-                            this.value[k]=temp.data[k];
-                        }
-                    }
-
-                    this.editMode = false;
-                } catch(e) {
-                    this.snackbar.status = true
-                    if(e.response && e.response.data.message) {
-                        this.snackbar.text = e.response.data.message
-                    } else {
-                        this.snackbar.text = e
-                    }
-                }
-            },
-            async checkStatus() {
-                try {
-                    if(!this.offline){
-                        var temp = await axios.post(axios.fixUrl(this.value._links['/checkstatus'].href))
-                        for(var k in temp.data) this.value[k]=temp.data[k];
-                    }
-
-                    this.editMode = false;
-                    
-                    this.$emit('input', this.value);
-                    this.$emit('delete', this.value);
-                
-                } catch(e) {
-                    this.snackbar.status = true
-                    if(e.response && e.response.data.message) {
-                        this.snackbar.text = e.response.data.message
-                    } else {
-                        this.snackbar.text = e
-                    }
-                }
             },
         },
     }

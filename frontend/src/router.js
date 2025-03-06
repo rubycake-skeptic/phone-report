@@ -11,11 +11,11 @@ import ReportLossReportDetail from "./components/listers/ReportLossReportDetail"
 import NotificationmanagementNotificationHistoryManager from "./components/listers/NotificationmanagementNotificationHistoryCards"
 import NotificationmanagementNotificationHistoryDetail from "./components/listers/NotificationmanagementNotificationHistoryDetail"
 
-import DeviceMgmtDeviceMgmtManager from "./components/listers/DeviceMgmtDeviceMgmtCards"
-import DeviceMgmtDeviceMgmtDetail from "./components/listers/DeviceMgmtDeviceMgmtDetail"
+import DevicemgmtDeviceMgmtManager from "./components/listers/DevicemgmtDeviceMgmtCards"
+import DevicemgmtDeviceMgmtDetail from "./components/listers/DevicemgmtDeviceMgmtDetail"
 
-import 단말기조회View from "./components/단말기조회View"
-import 단말기조회ViewDetail from "./components/단말기조회ViewDetail"
+import ReadDeviceView from "./components/ReadDeviceView"
+import ReadDeviceViewDetail from "./components/ReadDeviceViewDetail"
 
 
 export default new Router({
@@ -45,25 +45,25 @@ export default new Router({
             },
 
             {
-                path: '/deviceMgmts/deviceMgmts',
-                name: 'DeviceMgmtDeviceMgmtManager',
-                component: DeviceMgmtDeviceMgmtManager
+                path: '/devicemgmts/deviceMgmts',
+                name: 'DevicemgmtDeviceMgmtManager',
+                component: DevicemgmtDeviceMgmtManager
             },
             {
-                path: '/deviceMgmts/deviceMgmts/:id',
-                name: 'DeviceMgmtDeviceMgmtDetail',
-                component: DeviceMgmtDeviceMgmtDetail
+                path: '/devicemgmts/deviceMgmts/:id',
+                name: 'DevicemgmtDeviceMgmtDetail',
+                component: DevicemgmtDeviceMgmtDetail
             },
 
             {
-                path: '/deviceMgmts/단말기조회',
-                name: '단말기조회View',
-                component: 단말기조회View
+                path: '/devicemgmts/readDevices',
+                name: 'ReadDeviceView',
+                component: ReadDeviceView
             },
             {
-                path: '/deviceMgmts/단말기조회/:id',
-                name: '단말기조회ViewDetail',
-                component: 단말기조회ViewDetail
+                path: '/devicemgmts/readDevices/:id',
+                name: 'ReadDeviceViewDetail',
+                component: ReadDeviceViewDetail
             },
 
 

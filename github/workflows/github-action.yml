@@ -31,7 +31,7 @@ jobs:
         run: |
           mvn clean package -f ./report/pom.xml
           mvn clean package -f ./notificationmanagement/pom.xml
-          mvn clean package -f ./device mgmt/pom.xml
+          mvn clean package -f ./devicemgmt/pom.xml
           mvn clean package -f ./analytics/pom.xml
 
       - name: Docker Build and push for Report
@@ -54,15 +54,15 @@ jobs:
             ghcr.io/${{ github.repository }}/notificationmanagement:latest
             ghcr.io/${{ github.repository }}/notificationmanagement:${{ github.ref_name }}
             
-      - name: Docker Build and push for DeviceMgmt
+      - name: Docker Build and push for Devicemgmt
         uses: docker/build-push-action@v4
         with:
-          context: ./device mgmt
+          context: ./devicemgmt
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/device-mgmt:latest
-            ghcr.io/${{ github.repository }}/device-mgmt:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/devicemgmt:latest
+            ghcr.io/${{ github.repository }}/devicemgmt:${{ github.ref_name }}
             
       - name: Docker Build and push for Analytics
         uses: docker/build-push-action@v4

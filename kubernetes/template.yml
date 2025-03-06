@@ -83,22 +83,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: device mgmt
+  name: devicemgmt
   labels:
-    app: device mgmt
+    app: devicemgmt
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: device mgmt
+      app: devicemgmt
   template:
     metadata:
       labels:
-        app: device mgmt
+        app: devicemgmt
     spec:
       containers:
-        - name: device mgmt
-          image: username/device mgmt:latest
+        - name: devicemgmt
+          image: username/devicemgmt:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -199,15 +199,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: device mgmt
+  name: devicemgmt
   labels:
-    app: device mgmt
+    app: devicemgmt
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: device mgmt
+    app: devicemgmt
 
 
 ---

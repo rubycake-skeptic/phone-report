@@ -49,7 +49,7 @@ pluralCaseList.push( {plural: "reports/lossReports", pascal: "ReportLossReport"}
 
 pluralCaseList.push( {plural: "notificationmanagements/notificationHistories", pascal: "NotificationmanagementNotificationHistory"} )
 
-pluralCaseList.push( {plural: "deviceMgmts/deviceMgmts", pascal: "DeviceMgmtDeviceMgmt"} )
+pluralCaseList.push( {plural: "devicemgmts/deviceMgmts", pascal: "DevicemgmtDeviceMgmt"} )
 
 
 

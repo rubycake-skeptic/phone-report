@@ -18,45 +18,41 @@ import phonereport.domain.*;
 public class PolicyHandler {
 
     @Autowired
-    LossReportRepository lossReportRepository;
+    DeviceMgmtRepository deviceMgmtRepository;
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='DeviceActivated'"
+        condition = "headers['type']=='ReportReviewed'"
     )
-    public void wheneverDeviceActivated_ChangeReportStatus(
-        @Payload DeviceActivated deviceActivated
+    public void wheneverReportReviewed_DeactivateDevice(
+        @Payload ReportReviewed reportReviewed
     ) {
-        DeviceActivated event = deviceActivated;
+        ReportReviewed event = reportReviewed;
         System.out.println(
-            "\n\n##### listener ChangeReportStatus : " +
-            deviceActivated +
-            "\n\n"
+            "\n\n##### listener DeactivateDevice : " + reportReviewed + "\n\n"
         );
 
         // Sample Logic //
-        LossReport.changeReportStatus(event);
+        DeviceMgmt.deactivateDevice(event);
     }
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='DeviceDeactivated'"
+        condition = "headers['type']=='CancelReport'"
     )
-    public void wheneverDeviceDeactivated_ChangeReportStatus(
-        @Payload DeviceDeactivated deviceDeactivated
+    public void wheneverCancelReport_ReactivateDevice(
+        @Payload CancelReport cancelReport
     ) {
-        DeviceDeactivated event = deviceDeactivated;
+        CancelReport event = cancelReport;
         System.out.println(
-            "\n\n##### listener ChangeReportStatus : " +
-            deviceDeactivated +
-            "\n\n"
+            "\n\n##### listener ReactivateDevice : " + cancelReport + "\n\n"
         );
 
         // Sample Logic //
-        LossReport.changeReportStatus(event);
+        DeviceMgmt.reactivateDevice(event);
     }
 }
 //>>> Clean Arch / Inbound Adaptor
