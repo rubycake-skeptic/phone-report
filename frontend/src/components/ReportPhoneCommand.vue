@@ -5,6 +5,11 @@
         </v-card-title>
 
         <v-card-text>
+            <Number label="ReportId" v-model="value.reportId" :editMode="editMode"/>
+            <String label="Imei" v-model="value.imei" :editMode="editMode"/>
+            <Number label="UserId" v-model="value.userId" :editMode="editMode"/>
+            <String label="Status" v-model="value.status" :editMode="editMode"/>
+            <Number label="ReviewerId" v-model="value.reviewerId" :editMode="editMode"/>
         </v-card-text>
 
         <v-card-actions>
@@ -40,6 +45,11 @@
             value: {},
         }),
         created() {
+            this.value.reportId = 0;
+            this.value.imei = '';
+            this.value.userId = 0;
+            this.value.status = '';
+            this.value.reviewerId = 0;
         },
         watch: {
         },

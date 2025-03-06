@@ -24,10 +24,10 @@ public class LossReportController {
             method = RequestMethod.POST,
             produces = "application/json;charset=UTF-8")
     public LossReport reportPhone(HttpServletRequest request, HttpServletResponse response, 
-        ) throws Exception {
+        @RequestBody ReportPhoneCommand reportPhoneCommand) throws Exception {
             System.out.println("##### /lossReport/reportPhone  called #####");
             LossReport lossReport = new LossReport();
-            lossReport.reportPhone();
+            lossReport.reportPhone(reportPhoneCommand);
             lossReportRepository.save(lossReport);
             return lossReport;
     }

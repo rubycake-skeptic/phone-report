@@ -65,10 +65,16 @@
                 v-if="!editMode"
                 color="primary"
                 text
-                @click="reportPhone"
+                @click="openReportPhone"
             >
                 ReportPhone
             </v-btn>
+            <v-dialog v-model="reportPhoneDiagram" width="500">
+                <ReportPhoneCommand
+                    @closeDialog="closeReportPhone"
+                    @reportPhone="reportPhone"
+                ></ReportPhoneCommand>
+            </v-dialog>
             <v-btn
                 v-if="!editMode"
                 color="primary"
@@ -122,6 +128,7 @@
                 timeout: 5000,
                 text: '',
             },
+            reportPhoneDiagram: false,
         }),
 	async created() {
         },
