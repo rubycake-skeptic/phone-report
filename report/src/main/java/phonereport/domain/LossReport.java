@@ -30,8 +30,8 @@ public class LossReport {
 
     @PostPersist
     public void onPostPersist() {
-        CancelReport cancelReport = new CancelReport(this);
-        cancelReport.publishAfterCommit();
+        // CancelReport cancelReport = new CancelReport(this);
+        // cancelReport.publishAfterCommit();
     }
 
     public static LossReportRepository repository() {
@@ -44,7 +44,12 @@ public class LossReport {
     //<<< Clean Arch / Port Method
     public void reportPhone(ReportPhoneCommand reportPhoneCommand) {
         //implement business logic here:
+        this.setReportId(reportPhoneCommand.getReportId());
+        this.setImei(reportPhoneCommand.getImei());
+        this.setUserId(reportPhoneCommand.getUserId());
 
+        repository().save(this);
+        
         PhoneReported phoneReported = new PhoneReported(this);
         phoneReported.publishAfterCommit();
     }

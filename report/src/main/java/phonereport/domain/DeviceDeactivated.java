@@ -12,6 +12,6 @@ public class DeviceDeactivated extends AbstractEvent {
     private Long deviceId;
     private String imei;
     private Long userId;
-    private Object status;
+    private String status;
     private Date updatedAt;
 }
