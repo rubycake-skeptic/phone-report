@@ -22,5 +22,41 @@ public class PolicyHandler {
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='DeviceActivated'"
+    )
+    public void wheneverDeviceActivated_ChangeReportStatus(
+        @Payload DeviceActivated deviceActivated
+    ) {
+        DeviceActivated event = deviceActivated;
+        System.out.println(
+            "\n\n##### listener ChangeReportStatus : " +
+            deviceActivated +
+            "\n\n"
+        );
+
+        // Sample Logic //
+        LossReport.changeReportStatus(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='DeviceDeactivated'"
+    )
+    public void wheneverDeviceDeactivated_ChangeReportStatus(
+        @Payload DeviceDeactivated deviceDeactivated
+    ) {
+        DeviceDeactivated event = deviceDeactivated;
+        System.out.println(
+            "\n\n##### listener ChangeReportStatus : " +
+            deviceDeactivated +
+            "\n\n"
+        );
+
+        // Sample Logic //
+        LossReport.changeReportStatus(event);
+    }
 }
 //>>> Clean Arch / Inbound Adaptor

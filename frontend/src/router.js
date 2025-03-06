@@ -14,8 +14,8 @@ import NotificationmanagementNotificationHistoryDetail from "./components/lister
 import DevicemgmtDeviceMgmtManager from "./components/listers/DevicemgmtDeviceMgmtCards"
 import DevicemgmtDeviceMgmtDetail from "./components/listers/DevicemgmtDeviceMgmtDetail"
 
-import 단말기조회View from "./components/단말기조회View"
-import 단말기조회ViewDetail from "./components/단말기조회ViewDetail"
+import ReadDeviceView from "./components/ReadDeviceView"
+import ReadDeviceViewDetail from "./components/ReadDeviceViewDetail"
 
 
 export default new Router({
@@ -56,14 +56,14 @@ export default new Router({
             },
 
             {
-                path: '/devicemgmts/단말기조회',
-                name: '단말기조회View',
-                component: 단말기조회View
+                path: '/devicemgmts/readDevices',
+                name: 'ReadDeviceView',
+                component: ReadDeviceView
             },
             {
-                path: '/devicemgmts/단말기조회/:id',
-                name: '단말기조회ViewDetail',
-                component: 단말기조회ViewDetail
+                path: '/devicemgmts/readDevices/:id',
+                name: 'ReadDeviceViewDetail',
+                component: ReadDeviceViewDetail
             },
 
 

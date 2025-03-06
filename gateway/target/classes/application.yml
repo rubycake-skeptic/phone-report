@@ -20,7 +20,7 @@ spring:
         - id: devicemgmt
           uri: http://localhost:8084
           predicates:
-            - Path=/deviceMgmts/**, /단말기조회/**
+            - Path=/deviceMgmts/**, /readDevices/**
         - id: analytics
           uri: http://localhost:8085
           predicates:

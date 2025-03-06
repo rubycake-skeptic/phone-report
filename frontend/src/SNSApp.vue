@@ -64,13 +64,13 @@
                     </v-list-item>
                     <v-list-item
                         class="px-2"
-                        key="단말기조회"
-                        to="/devicemgmts/단말기조회"
+                        key="readDevices"
+                        to="/devicemgmts/readDevices"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
                     >
-                        단말기조회
+                        단말기 조회
                     </v-list-item>
                 </v-list>
             </v-navigation-drawer>
@@ -149,10 +149,10 @@ export default {
                 ImageUrl: '',
             },
             { 
-                title: '단말기조회', 
-                description: '단말기 조회을 관리하는 화면입니다.', 
-                key: '단말기조회', 
-                route: '/devicemgmts/단말기조회',
+                title: '단말기 조회', 
+                description: 'ReadDevice을 관리하는 화면입니다.', 
+                key: 'readDevices', 
+                route: '/devicemgmts/readDevices',
                 ImageUrl: '',
             },
             

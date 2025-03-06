@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import javax.persistence.*;
 import lombok.Data;
-import phonereport.DevicemgmtApplication;
+import phonereport.DeviceMgmtApplication;
 import phonereport.domain.DeviceActivated;
 import phonereport.domain.DeviceAdded;
 import phonereport.domain.DeviceDeactivated;
@@ -33,7 +33,7 @@ public class DeviceMgmt {
     private Date createdAt;
 
     public static DeviceMgmtRepository repository() {
-        DeviceMgmtRepository deviceMgmtRepository = DevicemgmtApplication.applicationContext.getBean(
+        DeviceMgmtRepository deviceMgmtRepository = DeviceMgmtApplication.applicationContext.getBean(
             DeviceMgmtRepository.class
         );
         return deviceMgmtRepository;
@@ -69,7 +69,7 @@ public class DeviceMgmt {
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
-    public static void reactivateDevice(CancelReport cancelReport) {
+    public static void 단말기정지해제(CancelReport cancelReport) {
         //implement business logic here:
 
         /** Example 1:  new item 

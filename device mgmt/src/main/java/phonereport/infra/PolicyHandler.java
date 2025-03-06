@@ -43,16 +43,16 @@ public class PolicyHandler {
         value = KafkaProcessor.INPUT,
         condition = "headers['type']=='CancelReport'"
     )
-    public void wheneverCancelReport_ReactivateDevice(
+    public void wheneverCancelReport_단말기정지해제(
         @Payload CancelReport cancelReport
     ) {
         CancelReport event = cancelReport;
         System.out.println(
-            "\n\n##### listener ReactivateDevice : " + cancelReport + "\n\n"
+            "\n\n##### listener 단말기정지해제 : " + cancelReport + "\n\n"
         );
 
         // Sample Logic //
-        DeviceMgmt.reactivateDevice(event);
+        DeviceMgmt.단말기정지해제(event);
     }
 }
 //>>> Clean Arch / Inbound Adaptor
