@@ -18,7 +18,7 @@ import phonereport.domain.*;
 public class PolicyHandler {
 
     @Autowired
-    LossReportRepository lossReportRepository;
+    LostDeviceReportRepository lostDeviceReportRepository;
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
@@ -38,7 +38,7 @@ public class PolicyHandler {
         );
 
         // Sample Logic //
-        LossReport.changeReportStatus(event);
+        LostDeviceReport.changeReportStatus(event);
     }
 
     @StreamListener(
@@ -56,7 +56,7 @@ public class PolicyHandler {
         );
 
         // Sample Logic //
-        LossReport.changeReportStatus(event);
+        LostDeviceReport.changeReportStatus(event);
     }
 }
 //>>> Clean Arch / Inbound Adaptor

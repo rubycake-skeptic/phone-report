@@ -16,7 +16,7 @@ public class PhoneReported extends AbstractEvent {
     private Long userId;
     private String status;
 
-    public PhoneReported(LossReport aggregate) {
+    public PhoneReported(LostDeviceReport aggregate) {
         super(aggregate);
     }
 

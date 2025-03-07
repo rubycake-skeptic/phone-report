@@ -22,7 +22,7 @@ See the README.md files inside the each microservices directory:
 
 - report
 - notificationmanagement
-- devicemgmt
+- device
 - analytics
 
 
@@ -35,13 +35,13 @@ mvn spring-boot:run
 ## Test by API
 - report
 ```
- http :8088/lossReports reportId="reportId"imei="imei"userId="userId"status="status"reviewerId="reviewerId"
+ http :8088/lostDeviceReports reportId="reportId"imei="imei"userId="userId"status="status"reviewerId="reviewerId"
 ```
 - notificationmanagement
 ```
  http :8088/notificationHistories historyId="historyId"message="message"userId="userId"notifiedAt="notifiedAt"
 ```
-- devicemgmt
+- device
 ```
  http :8088/deviceMgmts deviceId="deviceId"imei="imei"userId="userId"updatedAt="updatedAt"createdAt="createdAt"
 ```

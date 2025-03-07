@@ -12,12 +12,12 @@ spring:
         - id: report
           uri: http://localhost:8082
           predicates:
-            - Path=/lossReports/**, 
+            - Path=/lostDeviceReports/**, 
         - id: notificationmanagement
           uri: http://localhost:8083
           predicates:
             - Path=/notificationHistories/**, 
-        - id: devicemgmt
+        - id: device
           uri: http://localhost:8084
           predicates:
             - Path=/deviceMgmts/**, /readDevices/**
@@ -52,13 +52,13 @@ spring:
         - id: report
           uri: http://report:8080
           predicates:
-            - Path=/lossReports/**, 
+            - Path=/lostDeviceReports/**, 
         - id: notificationmanagement
           uri: http://notificationmanagement:8080
           predicates:
             - Path=/notificationHistories/**, 
-        - id: devicemgmt
-          uri: http://devicemgmt:8080
+        - id: device
+          uri: http://device:8080
           predicates:
             - Path=/deviceMgmts/**, 
         - id: analytics

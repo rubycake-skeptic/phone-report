@@ -23,9 +23,10 @@ public class LossReportController {
     @RequestMapping(value = "/lossReports/reportphone",
             method = RequestMethod.POST,
             produces = "application/json;charset=UTF-8")
-    public LossReport reportPhone(HttpServletRequest request, HttpServletResponse response, 
+    public LossReport reportPhone(HttpServletRequest request, HttpServletResponse response,
         @RequestBody ReportPhoneCommand reportPhoneCommand) throws Exception {
             System.out.println("##### /lossReport/reportPhone  called #####");
+            System.out.println(reportPhoneCommand);
             LossReport lossReport = new LossReport();
             lossReport.reportPhone(reportPhoneCommand);
             lossReportRepository.save(lossReport);
@@ -49,7 +50,7 @@ public class LossReportController {
     @RequestMapping(value = "/lossReports/checkstatus",
             method = RequestMethod.POST,
             produces = "application/json;charset=UTF-8")
-    public LossReport checkStatus(HttpServletRequest request, HttpServletResponse response, 
+    public LossReport checkStatus(HttpServletRequest request, HttpServletResponse response
         ) throws Exception {
             System.out.println("##### /lossReport/checkStatus  called #####");
             LossReport lossReport = new LossReport();
