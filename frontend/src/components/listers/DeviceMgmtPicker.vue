@@ -49,7 +49,7 @@
     const axios = require('axios').default;
 
     export default {
-        name: 'DevicemgmtDeviceMgmtPicker',
+        name: 'DeviceDeviceMgmtPicker',
         props: {
             value: [String, Object, Array, Number, Boolean],
         },

@@ -18,7 +18,7 @@ public class ReportReviewed extends AbstractEvent {
     private Long inspectorId;
     private Long reviewerId;
 
-    public ReportReviewed(LossReport aggregate) {
+    public ReportReviewed(LostDeviceReport aggregate) {
         super(aggregate);
     }
 

@@ -5,6 +5,8 @@
         </v-card-title>
 
         <v-card-text>
+            <Number label="ReportId" v-model="value.reportId" :editMode="editMode"/>
+            <String label="Status" v-model="value.status" :editMode="editMode"/>
         </v-card-text>
 
         <v-card-actions>
@@ -40,6 +42,8 @@
             value: {},
         }),
         created() {
+            this.value.reportId = 0;
+            this.value.status = '';
         },
         watch: {
         },

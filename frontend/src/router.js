@@ -5,14 +5,14 @@ import Router from 'vue-router'
 Vue.use(Router);
 
 
-import ReportLossReportManager from "./components/listers/ReportLossReportCards"
-import ReportLossReportDetail from "./components/listers/ReportLossReportDetail"
+import ReportLostDeviceReportManager from "./components/listers/ReportLostDeviceReportCards"
+import ReportLostDeviceReportDetail from "./components/listers/ReportLostDeviceReportDetail"
 
 import NotificationmanagementNotificationHistoryManager from "./components/listers/NotificationmanagementNotificationHistoryCards"
 import NotificationmanagementNotificationHistoryDetail from "./components/listers/NotificationmanagementNotificationHistoryDetail"
 
-import DevicemgmtDeviceMgmtManager from "./components/listers/DevicemgmtDeviceMgmtCards"
-import DevicemgmtDeviceMgmtDetail from "./components/listers/DevicemgmtDeviceMgmtDetail"
+import DeviceDeviceMgmtManager from "./components/listers/DeviceDeviceMgmtCards"
+import DeviceDeviceMgmtDetail from "./components/listers/DeviceDeviceMgmtDetail"
 
 import ReadDeviceView from "./components/ReadDeviceView"
 import ReadDeviceViewDetail from "./components/ReadDeviceViewDetail"
@@ -23,14 +23,14 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
             {
-                path: '/reports/lossReports',
-                name: 'ReportLossReportManager',
-                component: ReportLossReportManager
+                path: '/reports/lostDeviceReports',
+                name: 'ReportLostDeviceReportManager',
+                component: ReportLostDeviceReportManager
             },
             {
-                path: '/reports/lossReports/:id',
-                name: 'ReportLossReportDetail',
-                component: ReportLossReportDetail
+                path: '/reports/lostDeviceReports/:id',
+                name: 'ReportLostDeviceReportDetail',
+                component: ReportLostDeviceReportDetail
             },
 
             {
@@ -45,23 +45,23 @@ export default new Router({
             },
 
             {
-                path: '/devicemgmts/deviceMgmts',
-                name: 'DevicemgmtDeviceMgmtManager',
-                component: DevicemgmtDeviceMgmtManager
+                path: '/devices/deviceMgmts',
+                name: 'DeviceDeviceMgmtManager',
+                component: DeviceDeviceMgmtManager
             },
             {
-                path: '/devicemgmts/deviceMgmts/:id',
-                name: 'DevicemgmtDeviceMgmtDetail',
-                component: DevicemgmtDeviceMgmtDetail
+                path: '/devices/deviceMgmts/:id',
+                name: 'DeviceDeviceMgmtDetail',
+                component: DeviceDeviceMgmtDetail
             },
 
             {
-                path: '/devicemgmts/readDevices',
+                path: '/devices/readDevices',
                 name: 'ReadDeviceView',
                 component: ReadDeviceView
             },
             {
-                path: '/devicemgmts/readDevices/:id',
+                path: '/devices/readDevices/:id',
                 name: 'ReadDeviceViewDetail',
                 component: ReadDeviceViewDetail
             },

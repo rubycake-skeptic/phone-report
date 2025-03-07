@@ -15,8 +15,9 @@ public class CancelReport extends AbstractEvent {
     private String imei;
     private Long userId;
     private String status;
+    private Long reviewerId;
 
-    public CancelReport(LossReport aggregate) {
+    public CancelReport(LostDeviceReport aggregate) {
         super(aggregate);
     }
 

@@ -34,8 +34,8 @@
                 <v-list>
                     <v-list-item
                         class="px-2"
-                        key="lossReports"
-                        to="/reports/lossReports"
+                        key="lostDeviceReports"
+                        to="/reports/lostDeviceReports"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
@@ -55,7 +55,7 @@
                     <v-list-item
                         class="px-2"
                         key="deviceMgmts"
-                        to="/devicemgmts/deviceMgmts"
+                        to="/devices/deviceMgmts"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
@@ -65,7 +65,7 @@
                     <v-list-item
                         class="px-2"
                         key="readDevices"
-                        to="/devicemgmts/readDevices"
+                        to="/devices/readDevices"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
@@ -129,9 +129,9 @@ export default {
         aggregate: [
             { 
                 title: '분실 신고', 
-                description: 'LossReport을 관리하는 화면입니다.', 
-                key: 'lossReports', 
-                route: '/reports/lossReports',
+                description: 'LostDeviceReport을 관리하는 화면입니다.', 
+                key: 'lostDeviceReports', 
+                route: '/reports/lostDeviceReports',
                 ImageUrl: '',
             },
             { 
@@ -145,14 +145,14 @@ export default {
                 title: '단말기관리', 
                 description: 'deviceMgmt을 관리하는 화면입니다.', 
                 key: 'deviceMgmts', 
-                route: '/devicemgmts/deviceMgmts',
+                route: '/devices/deviceMgmts',
                 ImageUrl: '',
             },
             { 
                 title: '단말기 조회', 
                 description: 'ReadDevice을 관리하는 화면입니다.', 
                 key: 'readDevices', 
-                route: '/devicemgmts/readDevices',
+                route: '/devices/readDevices',
                 ImageUrl: '',
             },
             
